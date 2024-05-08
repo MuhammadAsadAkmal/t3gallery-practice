@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { db } from "~/server/db";
+
+export const dynamic = "force-dynamic";
 
 const mockUrls = [
   "https://utfs.io/f/4033f3b2-0fc9-4a6e-95be-37009f50e078-7qajqq.png",
@@ -21,7 +22,7 @@ export default async function HomePage() {
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-      {posts.map((post) => (
+        {posts.map((post) => (
           <div key={post.id}>{post.name}</div>
         ))}
         {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
